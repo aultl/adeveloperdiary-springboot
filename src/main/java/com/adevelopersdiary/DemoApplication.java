@@ -14,6 +14,6 @@ public class DemoApplication {
 		hmStudent.put(new Long(one.getId()), one);
 
 		Student two = new Student("","");
-		hmStudent.put(new Long(two.getId()), two)
+		hmStudent.put(new Long(two.getId()), two);
 	}
 }
