@@ -1,4 +1,4 @@
-package com.adevelopersdiary
+package com.adevelopersdiary;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
