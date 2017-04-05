@@ -8,7 +8,7 @@ public class Student {
   private String subject;
 
   public Student(String name, String subject) {
-    this.id = (new Date).getTime());
+    this.id = (new Date()).getTime();
     this.name = name;
     this.subject = subject;
   }
