@@ -1,4 +1,4 @@
-package com.adeveloperdiary;
+package com.adevelopersdiary;
 
 import java.util.Date;
 
