@@ -16,5 +16,7 @@ public class DemoApplication {
 
 		Student two = new Student("Jane","History");
 		hmStudent.put(new Long(two.getId()), two);
+
+		SpringApplication.run(DemoApplication.class, args);
 	}
 }
