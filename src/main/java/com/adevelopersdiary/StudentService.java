@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/rest/student")
 class StudentService {
 
-   @RequestMapping(value="/",method = RequestMethod.GET)
+   @RequestMapping(value="/rest/student",method = RequestMethod.GET)
    public HashMap<Long,Student> getAllStudents(){
       return DemoApplication.hmStudent;
    }
