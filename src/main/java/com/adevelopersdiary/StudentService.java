@@ -11,6 +11,6 @@ class StudentService{
 
    @RequestMapping(value="/",method = RequestMethod.GET)
    public HashMap<Long,Student> getAllStudents(){
-      return Application.hmStudent;
+      return DemoApplication.hmStudent;
    }
 }
