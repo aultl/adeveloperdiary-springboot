@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication {
   public static HashMap<Long,Student> hmStudent;
-  private final AtomicLong counter = new AtomicLong();
+  private static final AtomicLong counter = new AtomicLong();
 
 	public static void main(String[] args) {
     hmStudent=new HashMap<Long,Student>();
