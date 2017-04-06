@@ -4,11 +4,13 @@ import java.util.Date;
 
 public class Student {
   private long id;
+  private long date;
   private String name;
   private String subject;
 
-  public Student(String name, String subject) {
-    this.id = (new Date()).getTime();
+  public Student(long id, String name, String subject) {
+    this.id = id;
+    this.date = (new Date()).getTime();
     this.name = name;
     this.subject = subject;
   }
@@ -37,6 +39,7 @@ public class Student {
   public String toString() {
     return "Student{" +
            "id=" + id +
+           ", date='" + date + '\'' +
            ", name='" + name + '\'' +
            ", subject='" + subject + '\'' +
            '}';

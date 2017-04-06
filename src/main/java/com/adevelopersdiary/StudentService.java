@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class StudentService {
 
-   @RequestMapping(value="/api/v1/student", method = RequestMethod.GET)
+   @RequestMapping(value="/api/v1/student", method=RequestMethod.GET)
    public HashMap<Long,Student> getAllStudents(){
       return DemoApplication.hmStudent;
    }
 
-   @RequestMapping(value="/api/v1/student/add", method = RequestMethod.POST)
+   @RequestMapping(value="/api/v1/student/add", method=RequestMethod.POST)
    public Student addStudent(@RequestParam(value="name") String name,
-       @RequestParam(value="subject",defaultValue = "unknown") String subject){
+       @RequestParam(value="subject", defaultValue="unknown") String subject){
 
-     Student student=new Student(name,subject);
-     DemoApplication.hmStudent.put(DemoApplication.counter.incrementAndGet(),student);
+     Student student=new Student(DemoApplication.counter.incrementAndGet(),name,subject);
+     DemoApplication.hmStudent.put(student.getId(),student);
      return student;
   }
 }

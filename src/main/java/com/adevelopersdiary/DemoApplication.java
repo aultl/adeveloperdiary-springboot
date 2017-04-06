@@ -13,11 +13,11 @@ public class DemoApplication {
 	public static void main(String[] args) {
     hmStudent=new HashMap<Long,Student>();
 
-		Student one = new Student("John", "Math");
-		hmStudent.put(counter.incrementAndGet(), one);
+		Student one = new Student(counter.incrementAndGet(), "John", "Math");
+		hmStudent.put(one.getId(), one);
 
-		Student two = new Student("Jane","History");
-		hmStudent.put(counter.incrementAndGet(), two);
+		Student two = new Student(counter.incrementAndGet(), "Jane","History");
+		hmStudent.put(two.getId(), two);
 
 		SpringApplication.run(DemoApplication.class, args);
 	}
