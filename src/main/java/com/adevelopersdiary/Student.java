@@ -25,6 +25,7 @@ public class Student {
 
   public void setName(String name) {
     this.name = name;
+    this.date = (new Date()).getTime();
   }
 
   public String getSubject() {
@@ -33,6 +34,7 @@ public class Student {
 
   public void setSubject(String subject) {
     this.subject = subject;
+    this.date = (new Date()).getTime();
   }
 
   @Override
