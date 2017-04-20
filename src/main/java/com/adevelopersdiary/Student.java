@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Student {
   private long id;
   private long update;
-  private long grade;
+  private float grade;
   private String name;
   private String subject;
   public static final AtomicLong counter = new AtomicLong();
@@ -44,11 +44,11 @@ public class Student {
     this.update = (new Date()).getTime();
   }
 
-  public long getGrade() {
+  public float getGrade() {
     return grade;
   }
 
-  public void setGrade(long grade) {
+  public void setGrade(float grade) {
     this.grade = grade;
     this.update = (new Date()).getTime();
   }

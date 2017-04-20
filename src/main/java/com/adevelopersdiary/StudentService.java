@@ -26,28 +26,31 @@ public class StudentService {
   }
 
   @RequestMapping(value="/api/v1/student", method=RequestMethod.PUT)
-  public Student updateStudent(@RequestParam(value="id") String id,
+  public Student updateStudent(@RequestParam(value="id") long id,
       @RequestParam(value="name", defaultValue="unknown") String name,
       @RequestParam(value="subject", defaultValue="unknown") String subject,
-      @RequestParam(value="grade", defaultValue="unknown") String grade){
+      @RequestParam(value="grade", defaultValue="0.0") float grade){
 
-      Student student = DemoApplication.hmStudent.get(Long.parseLong(id));
+      Student student = DemoApplication.hmStudent.get(id);
 
       if (student == null) throw new StudentNotFoundException();
 
       if (!"unknown".equals(subject)) {
         student.setSubject(subject);
-        DemoApplication.hmStudent.put(Long.parseLong(id),student);
+        DemoApplication.hmStudent.put(id,student);
       }
 
       if (!"unknown".equals(name)) {
         student.setName(name);
-        DemoApplication.hmStudent.put(Long.parseLong(id),student);
+        DemoApplication.hmStudent.put(id,student);
       }
 
       if (!"unknown".equals(grade)) {
-        student.setGrade(Long.parseLong(grade));
-        DemoApplication.hmStudent.put(Long.parseLong(id),student);
+        if ( grade > 4.0) throw new GradeOutsideRange();
+        if ( grade < 0.0) throw new GradeOutsideRange();
+
+        student.setGrade(grade);
+        DemoApplication.hmStudent.put(id,student);
       }
 
       return student;
@@ -55,6 +58,11 @@ public class StudentService {
 
   @ResponseStatus(value=HttpStatus.BAD_REQUEST, reason="Student does not exist!")  // 400
   class StudentNotFoundException extends RuntimeException {
+    // do nothing;
+  }
+
+  @ResponseStatus(value=HttpStatus.BAD_REQUEST, reason="Grade must be between 0.0 and 5.0")  // 400
+  class GradeOutsideRange extends RuntimeException {
     // do nothing;
   }
 }
