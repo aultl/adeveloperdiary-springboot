@@ -7,15 +7,16 @@ public class Student {
   private long id;
   private long update;
   private float grade;
-  private String name;
+  private String fname;
+  private String lname;
   private String subject;
   public static final AtomicLong counter = new AtomicLong();
 
   public Student(String name, String subject) {
     this.id = counter.incrementAndGet();
     this.update = (new Date()).getTime();
-    this.name = name;
     this.subject = subject;
+    setName(name);
   }
 
   public long getId() {
@@ -27,11 +28,13 @@ public class Student {
   }
 
   public String getName() {
-    return name;
+    return lname + "," + fname;
   }
 
   public void setName(String name) {
-    this.name = name;
+    String[] parts = name.split(",");
+    this.lname = parts[1];
+    this.fname = parts[0];
     this.update = (new Date()).getTime();
   }
 
