@@ -33,8 +33,8 @@ public class Student {
 
   public void setName(String name) {
     String[] parts = name.split(",");
-    this.lname = parts[1];
-    this.fname = parts[0];
+    this.lname = parts[0];
+    this.fname = parts[1];
     this.update = (new Date()).getTime();
   }
 
