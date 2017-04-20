@@ -46,8 +46,7 @@ public class StudentService {
       }
 
       if (!"unknown".equals(grade)) {
-        if ( grade > 4.0) throw new GradeOutsideRange();
-        if ( grade < 0.0) throw new GradeOutsideRange();
+        if ( grade < 0.0 || grade > 4.0) throw new GradeOutsideRange();
 
         student.setGrade(grade);
         DemoApplication.hmStudent.put(id,student);
