@@ -1,2 +1,2 @@
 # adeveloperdiary-springboot
-Code for Springboot tutorial
+Code for Springboot tutorial from adevelopersdiary.com
