@@ -1,0 +1,1 @@
+FROM anapsix:jdk8
