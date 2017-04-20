@@ -11,10 +11,10 @@ public class DemoApplication {
 	public static void main(String[] args) {
     hmStudent=new HashMap<Long,Student>();
 
-		Student one = new Student("John", "Math");
+		Student one = new Student("Smith,John", "Math");
 		hmStudent.put(one.getId(), one);
 
-		Student two = new Student("Jane","History");
+		Student two = new Student("Doe,Jane","History");
 		hmStudent.put(two.getId(), two);
 
 		SpringApplication.run(DemoApplication.class, args);
