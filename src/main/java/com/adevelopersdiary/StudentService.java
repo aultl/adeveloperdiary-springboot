@@ -46,7 +46,7 @@ public class StudentService {
       }
 
       if ( grade != 0.0 ) {
-        if ( grade < 0.0 || grade > 4.0) throw new GradeOutsideRange();
+        if ( grade < 0.1 || grade > 4.0) throw new GradeOutsideRange();
 
         student.setGrade(grade);
         DemoApplication.hmStudent.put(id,student);
@@ -60,7 +60,7 @@ public class StudentService {
     // do nothing;
   }
 
-  @ResponseStatus(value=HttpStatus.BAD_REQUEST, reason="Grade must be between 0.0 and 5.0")  // 400
+  @ResponseStatus(value=HttpStatus.BAD_REQUEST, reason="Grade must be between 0.1 and 5.0")  // 400
   class GradeOutsideRange extends RuntimeException {
     // do nothing;
   }
